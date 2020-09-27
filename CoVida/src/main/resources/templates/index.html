@@ -17,7 +17,7 @@
     <!--Menu do Site com todos os itens que terá no main-->
     <nav id="main" class="navbar navbar-expand-lg navbar-dark bg-primary">
   
-        <img id="logo" alt="Responsive image" src="/img/logotransparente.png">
+        <img id="logo" alt="Responsive image" th:src="@{/logotransparente.png}" />
 
 
         <div class = "container">
@@ -101,7 +101,7 @@
         <div class="card-group mt-3">
 
             <div id="cardFunc" class="card">
-              <img id="imgFooter" src="img/iconCardConv.jpg" class="card-img-top" alt="...">
+              <img id="imgFooter" th:src="@{/iconCardConv.jpg}" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Adicione um convênio</h5>
                 <p class="card-text">Ao adicionar um convênio, você pode ganhar benefícios através dele, uma vez que você compartilhe nosso site para algum conhecido.</p> 
@@ -109,7 +109,7 @@
             </div>
 
             <div id="cardFunc" class="card">
-              <img id="imgFooter" src="img/iconConscien.png" class="card-img-top" alt="...">
+              <img id="imgFooter" th:src="@{/iconConscien.png}" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Concientize-se</h5>
                 <p class="card-text">O principal foco de nosso aplicativo é trazer a conscientização da doação de órgãos para um maior público, para que mais vidas sejam salvas.</p>  
@@ -117,7 +117,7 @@
             </div>
 
             <div id="cardFunc" class="card">
-                <img id="imgFooter" src="img/iconPeople.png" class="card-img-top" alt="...">
+                <img id="imgFooter" th:src="@{/iconPeople.png}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Adicione contatos</h5>
                   <p class="card-text">Ao adicionar seus contatos, automaticamente eles terão que estar de acordo com sua vontade de se tornar um doador de órgãos.</p>     
@@ -132,21 +132,21 @@
                   <div id="secaoZoom" class="zoom mt-3">  
                     <div class="text-item">
                     </div>                 
-                    <img id="imgTela" src="img/telaConvenio.png" class="img-responsive">
+                    <img id="imgTela" th:src="@{/telaConvenio.png}" class="img-responsive">
                   </div>
                 </div>
                 <div class="col-sm">
                   <div id="secaoZoom" class="zoom mt-3"> 
                     <div class="text-item">
                     </div>                   
-                    <img id="imgTela" src="img/telaConscientizacao.png" class="img-responsive">
+                    <img id="imgTela" th:src="@{/telaConscientizacao.png}" class="img-responsive">
                   </div>
                 </div>
                 <div class="col-sm">
                   <div id="secaoZoom" class="zoom mt-3">
                     <div class="text-item">
                     </div>                   
-                    <img id="imgTela" src="img/telaContatos.png" class="img-responsive">
+                    <img id="imgTela" th:src="@{/telaContatos.png}" class="img-responsive">
                   </div>
                 </div>
               </div>
@@ -159,7 +159,7 @@
     <div id= "secaoPrototipo" class="container mt-3">
         <h1 class= "text-center">Protótipo</h1>
         <div id = "Videoprototipo" class="">
-            <video class = "mt-5" id="video" width="450" height="350" src="img/RPReplay-Final1593557581.mov" controls>
+            <video class = "mt-5" id="video" width="450" height="350" th:src="@{/RPReplay-Final1593557581.mov}" controls>
         </div>
             <div id="textoVideo">
                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat inventore voluptas totam, commodi qui, a rerum delectus eaque amet laboriosam quas placeat? Dolores cupiditate quia obcaecati corporis, quae non consectetur.</p>
@@ -185,7 +185,7 @@
 <footer id="rodape" class= "bg-primary mt-5" >
     <div class="card-group">
         <div class="card bg-primary">
-          <img id="imgFooter" src="img/iconEmail.png" class="card-img-top" alt="...">
+          <img id="imgFooter" th:src="@{/iconEmail.png}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Email</h5>
             <p class="card-text">Entre em contato conosco através de nosso e-mail:</p>
@@ -194,7 +194,7 @@
           </div>
         </div>
         <div class="card bg-primary">
-          <img id="imgFooter" src="img/iconTel.png" class="card-img-top" alt="...">
+          <img id="imgFooter" th:src="@{/iconTel.png}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Telefone</h5>
             <p class="card-text">Você também pode nos contatar através do número:</p>
@@ -202,7 +202,7 @@
           </div>
         </div>
         <div class="card bg-primary">
-          <img id="imgFooter" src="img/iconLocalizacao.png" class="card-img-top" alt="...">
+          <img id="imgFooter" th:src="@{/iconLocalizacao.png}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Localização</h5>
             <p class="card-text">Localização de nossa sede:</p>
