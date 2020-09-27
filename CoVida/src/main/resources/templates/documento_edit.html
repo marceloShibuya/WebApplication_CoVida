@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="_template :: head" ></head>
+
+<body>
+<div class="content">
+
+	<h2>Editar documento</h2>
+
+	<form action="/documento/update" method="POST" th:object="${documento}">
+		
+		<input type="hidden" th:field="*{id}" >
+		
+		<input 
+			type="text" 
+			placeholder="digite o rg" 
+			th:field="*{rg}"
+			th:classappend="${#fields.hasErrors('rg')} ? invalid" 
+		/>
+		<span th:errors="*{rg}"></span>
+		
+		<input 
+			type="text" 
+			placeholder="digite o cpf" 
+			th:field="*{cpf}"
+			th:classappend="${#fields.hasErrors('cpf')} ? invalid" 
+		/>
+		<span th:errors="*{cpf}"></span>
+
+		<div class="actions">
+			<a href="/documento" class="btn red">Cancelar</a>
+			<button class="btn">Salvar</button>
+		</div>
+
+	</form>
+	
+</div>
+
+</body>
+</html>

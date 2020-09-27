@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="_template :: head"></head>
+<body>
+	<h1>Documentos</h1>
+	
+	<nav th:include="_template :: menu('documento')"></nav>
+	
+	<a href="/documento/novo" class="btn-sm btn-primary"><span class="material-icons">add</span></a>
+	
+	<div class="content">
+		
+		<span class="alert" th:if="${message != null}" th:text="${message}"></span>
+		
+		<div class="user" th:each="documento : ${documentos}">
+
+			<div class="user-info">
+				
+				<h4>RG: </h4>
+				<p th:text="${documento.rg}"></p>
+
+			</div>
+			
+			<div class="user-info">
+				
+				<h4>CPF: </h4>
+				<p th:text="${documento.cpf}"></p>
+			</div>
+			
+			<div class="user-action">
+				<a th:href="${'documento/' + documento.id}">
+					<span class="material-icons yellow">create</span>
+				</a>
+				<a th:href="${'/documento/delete/' + documento.id}">
+					<span class="material-icons red">delete</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

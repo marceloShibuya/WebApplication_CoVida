@@ -1,0 +1,226 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" th:href="@{~/estilo.css}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>CoVida</title>
+  </head>
+  <body>
+    
+    <!--Menu do Site com todos os itens que terá no main-->
+    <nav id="main" class="navbar navbar-expand-lg navbar-dark bg-primary">
+  
+        <img id="logo" alt="Responsive image" src="/img/logotransparente.png">
+
+
+        <div class = "container">
+        
+        <a class="navbar-brand h1 mb-0" href="#main">CoVida</a> 
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite">
+            <span class = navbar-toggler-icon></span>
+        </button>
+
+        <div class= "collapse navbar-collapse" id="navbarSite">
+
+            <ul class= "navbar-nav mr-auto">
+
+                <li class = "nav-item">
+                    <a class= "nav-link" href="#introduction"> Início</a>
+                </li>
+
+                <li class = "nav-item">
+                   	<a href="/contato" class= "nav-link">Contato</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a href="/convenio" class= "nav-link">Convênio Médico</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a href="/documento" class= "nav-link">Documentos</a>
+                </li>
+
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item dropdown">
+                    
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle= "dropdown" id="navDrop">
+                        Social
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="https://www.facebook.com/">Facebook</a>
+                        <a class="dropdown-item" href="#">Twitter</a>
+                        <a class="dropdown-item" href="#">Instagram</a>
+                    </div>
+                </li>
+
+            </ul>
+
+            <form class= "form-inline">
+                <input class="form-control ml-4 mr-2"  type = "search" placeholder="Buscar">
+                <button class="btn btn-dark" type="submit">OK</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+  <div class="header-site">
+    <div class="container">  
+        <h1 id="header" class="text-center">CoVida</h1>
+        <p  id="header" class="text-center">Conheça a maior rede de doação de órgãos, arraste para baixo e veja os benefícios que terá ao aderir nossos valores e ideias.</p>
+      
+    </div>
+
+  </div>
+
+    <!--Corpo do Site (Conteúdo)-->
+<main>
+
+    <!--Introdução do nosso Site + explicação do aplicativo-->
+    <div class="container mt-3">
+        <h1 id="introduction" class= "text-center">Introdução</h1>
+        <p class="mt-2 text-center">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quasi deleniti odio? Veniam velit alias sequi praesentium natus delectus laboriosam beatae ipsa, voluptas commodi nemo vitae aliquam molestiae, laborum quos.</p>
+
+        <p class="mt-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eligendi illum exercitationem facere, incidunt cupiditate quia quis ad dolorem eius totam sed, nobis, temporibus eveniet accusamus ratione excepturi laudantium labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat qui iure beatae accusantium, tenetur corrupti? Laudantium exercitationem a quidem cupiditate maxime. Mollitia nulla autem fugiat a dicta! Aliquam, reiciendis dicta.</p>
+    </div>
+
+    <!--Apresentação das principais funcionalidades-->
+    <div id="func" class="container mt-5">
+        <h1  class= "text-center">Funcionalidades</h1>
+
+        <div class="card-group mt-3">
+
+            <div id="cardFunc" class="card">
+              <img id="imgFooter" src="img/iconCardConv.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Adicione um convênio</h5>
+                <p class="card-text">Ao adicionar um convênio, você pode ganhar benefícios através dele, uma vez que você compartilhe nosso site para algum conhecido.</p> 
+              </div>
+            </div>
+
+            <div id="cardFunc" class="card">
+              <img id="imgFooter" src="img/iconConscien.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Concientize-se</h5>
+                <p class="card-text">O principal foco de nosso aplicativo é trazer a conscientização da doação de órgãos para um maior público, para que mais vidas sejam salvas.</p>  
+              </div>     
+            </div>
+
+            <div id="cardFunc" class="card">
+                <img id="imgFooter" src="img/iconPeople.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Adicione contatos</h5>
+                  <p class="card-text">Ao adicionar seus contatos, automaticamente eles terão que estar de acordo com sua vontade de se tornar um doador de órgãos.</p>     
+                </div>     
+              </div>
+            </div>
+
+        <!--Seção de telas da prototipagem com efeito de zoom-->  
+            <div class="container  mt-4">
+              <div class="row">
+                <div  class="col-sm">
+                  <div id="secaoZoom" class="zoom mt-3">  
+                    <div class="text-item">
+                    </div>                 
+                    <img id="imgTela" src="img/telaConvenio.png" class="img-responsive">
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div id="secaoZoom" class="zoom mt-3"> 
+                    <div class="text-item">
+                    </div>                   
+                    <img id="imgTela" src="img/telaConscientizacao.png" class="img-responsive">
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <div id="secaoZoom" class="zoom mt-3">
+                    <div class="text-item">
+                    </div>                   
+                    <img id="imgTela" src="img/telaContatos.png" class="img-responsive">
+                  </div>
+                </div>
+              </div>
+            </div>
+         
+    </div>
+
+
+    <!--Video do protótipo e texto ao lado explicando ele-->
+    <div id= "secaoPrototipo" class="container mt-3">
+        <h1 class= "text-center">Protótipo</h1>
+        <div id = "Videoprototipo" class="">
+            <video class = "mt-5" id="video" width="450" height="350" src="img/RPReplay-Final1593557581.mov" controls>
+        </div>
+            <div id="textoVideo">
+                   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat inventore voluptas totam, commodi qui, a rerum delectus eaque amet laboriosam quas placeat? Dolores cupiditate quia obcaecati corporis, quae non consectetur.</p>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum veritatis possimus vel fuga omnis rerum expedita, sequi illum enim quis reprehenderit, animi inventore id voluptatibus quidem? Quasi a vel esse.</p> 
+            </div>
+    </div>
+    
+    <!-- PARALAX -->
+    <div id="data-area">
+      <div class="container">
+        <div class="row">
+
+        </div>
+      </div>
+
+    </div>
+
+
+</main>
+
+
+<!--Rodapé do site com as informações de contato-->
+<footer id="rodape" class= "bg-primary mt-5" >
+    <div class="card-group">
+        <div class="card bg-primary">
+          <img id="imgFooter" src="img/iconEmail.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Email</h5>
+            <p class="card-text">Entre em contato conosco através de nosso e-mail:</p>
+            <p id="text-contact" class="card-text"><small>contato@covida.com</small></p>
+          
+          </div>
+        </div>
+        <div class="card bg-primary">
+          <img id="imgFooter" src="img/iconTel.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Telefone</h5>
+            <p class="card-text">Você também pode nos contatar através do número:</p>
+            <p id="text-contact" class="card-text"><small>(99)99999-9999</small></p>
+          </div>
+        </div>
+        <div class="card bg-primary">
+          <img id="imgFooter" src="img/iconLocalizacao.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Localização</h5>
+            <p class="card-text">Localização de nossa sede:</p>
+            <p id="text-contact" class="card-text"><small>Avenida Paulista, 1001</small></p>
+          </div>
+        </div>
+      </div>
+
+      <p id="text-contact" class="card-text"><small>Desenvolvido by GroupCoVida</small></p>
+</footer>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

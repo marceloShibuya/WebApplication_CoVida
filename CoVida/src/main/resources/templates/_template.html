@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" th:href="@{~/global.css}">
+	<title>CoVida</title>
+</head>
+<body>
+	<nav th:fragment="menu(page)">
+		<ul>
+			<li><a href="/contato" th:classappend="${page=='contato'} ? active">Contato</a></li>
+			<li><a href="/convenio" th:classappend="${page=='convenio'} ? active">Convênio</a></li>
+			<li><a href="/documento" th:classappend="${page=='documento'} ? active">Documentos</a></li>
+		</ul>
+	</nav>
+</body>
+</html>

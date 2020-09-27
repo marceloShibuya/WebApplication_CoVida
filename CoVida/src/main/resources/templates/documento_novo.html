@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="_template :: head"></head>
+<body>
+<div class="content">
+	<h1>Novo documento</h1>
+
+	<form action="/documento" method="POST" th:object="${documento}">
+
+		<input name="rg" type="text" placeholder="digite o rg" value="12369444X" th:classapend="${#fields.hasErrors('rg')} ? invalid" /> 
+		<span th:errors="*{rg}"></span>
+		
+		<input name="cpf" type="text" placeholder="digite o cpf" value="11122233344" th:classapend="${#fields.hasErrors('cpf')} ? invalid" />
+		<span th:errors="*{cpf}"></span>
+		
+		<div class="actions">
+			<a href="/documento" class="btn red">Cancelar</a>
+			<button class="btn">Salvar</button>
+		</div>
+		
+	</form>
+</div>
+</body>
+</html>

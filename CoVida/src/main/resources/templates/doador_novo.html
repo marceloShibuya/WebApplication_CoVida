@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="_template :: head"></head>
+<body>
+<div class="content">
+
+	<h1>Novo doador</h1>
+
+	<form action="/doador" method="POST" th:object="${doador}">
+
+		<input name="nome" type="text" placeholder="nome completo" value="Marcelo" th:classapend="${#fields.hasErrors('nome')} ? invalid"  /> 
+		<span th:errors="*{nome}"></span>
+		
+		<input name="email" type="text" placeholder="E-mail" value="marcelo@fiap.com.br" th:classapend="${#fields.hasErrors('email')} ? invalid"/> 
+		<span th:errors="*{email}"></span>
+		
+		<input name="senha" type="password" placeholder="senha" value="151!@EBF1%#" th:classapend="${#fields.hasErrors('senha')} ? invalid"/> 
+		<span th:errors="*{senha}"></span>
+		
+		<div class="actions">
+			<a href="/doador" class="btn red">Cancelar</a>
+			<button class="btn">Salvar</button>
+		</div>
+		
+	</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="_template :: head" ></head>
+
+<body>
+<div class="content">
+
+	<h2>Editar convênio</h2>
+
+	<form action="/convenio/update" method="POST" th:object="${convenio}">
+		<input type="hidden" th:field="*{id}" >
+		<input 
+			type="text" 
+			placeholder="nome do convênio" 
+			th:field="*{nome}"
+			th:classappend="${#fields.hasErrors('nome')} ? invalid" 
+		/>
+		<span th:errors="*{nome}"></span>
+		
+		<input 
+			type="text" 
+			placeholder="tipo de plano" 
+			th:field="*{tipo}"
+		/>
+		
+
+		<div class="actions">
+			<a href="/convenio" class="btn red">Cancelar</a>
+			<button class="btn">Salvar</button>
+		</div>
+
+	</form>
+	
+</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="_template :: head"></head>
+<body>
+
+<div class="content">
+
+	<h2>Novo contato</h2>
+
+	<form action="/contato" method="POST" th:object="${contato}">
+
+		<input name="nome" type="text" placeholder="nome completo" value="Ricardo Shibuya" th:classapend="${#fields.hasErrors('nome')} ? invalid"/> 
+		<span th:errors="*{nome}"></span>
+		
+		<input name="telefone" type="text" placeholder="telefone" value="999999999" th:classapend="${#fields.hasErrors('telefone')} ? invalid"/>
+		<span th:errors="*{telefone}"></span>
+		
+		<input name="email" type="text" placeholder="E-mail" value="ricardo@fiap.com.br" th:classapend="${#fields.hasErrors('email')} ? invalid"/>
+		<span th:errors="*{email}"></span>
+		
+		<div class="actions">
+			<a href="/contato" class="btn red">Cancelar</a>
+			<button class="btn">Salvar</button>
+		</div>
+		
+	</form>
+</div>
+</body>
+</html>

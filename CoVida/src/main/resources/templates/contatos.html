@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="_template :: head"></head>
+<body>
+	<h1>Contatos</h1>
+	
+	<nav th:include="_template :: menu('contato')"></nav>
+	
+	<a href="/contato/novo" class="btn-sm btn-primary"><span class="material-icons white">add</span></a>
+	<a href="/index" class="btn-mt-2 red">Início</a>
+	
+	<div class="content">
+	
+		<span class="alert" th:if="${message != null}" th:text="${message}"></span>
+		
+		<div class="user" th:each="contato : ${contatos}">
+		
+			
+			<img alt="" src="https://avatars.githubusercontent.com/marceloShibuya" class="avatar">
+			
+	
+			<div class="user-info">
+				<h4 th:text="${contato.nome}"></h4>
+				<p th:text="${contato.telefone}"></p>
+				<p th:text="${contato.email}"></p>
+			</div>
+			
+			<div class="user-action">
+				<a th:href="${'contato/' + contato.id}">
+					<span class="material-icons yellow">create</span>
+				</a>
+				<a th:href="${'/contato/delete/' + contato.id}">
+					<span class="material-icons red">delete</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
