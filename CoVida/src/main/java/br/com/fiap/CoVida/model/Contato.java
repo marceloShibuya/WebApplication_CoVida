@@ -13,12 +13,12 @@ public class Contato {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
+	@NotBlank(message = "o campo nome é obrigatório")
 	private String nome;
 	
 	private int telefone;
 	
-	@NotBlank
+	@NotBlank(message = "o campo email é obrigatório")
 	@Email
 	private String email;
 	

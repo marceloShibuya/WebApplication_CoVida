@@ -12,10 +12,10 @@ public class Documento {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
+	@NotBlank(message = "o campo rg é obrigatório")
 	private String rg;
 	
-	@NotBlank
+	@NotBlank(message = "o campo cpf é obrigatório")
 	private String cpf;
 	
 	public Long getId() {
