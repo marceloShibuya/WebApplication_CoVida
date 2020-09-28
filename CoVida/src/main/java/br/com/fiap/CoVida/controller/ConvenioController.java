@@ -62,9 +62,10 @@ public class ConvenioController {
 	}
 	
 	@PostMapping("update")
-	public String updateConvenio(@Valid Convenio convenio, BindingResult result){
+	public String updateConvenio(@Valid Convenio convenio, BindingResult result, RedirectAttributes attributes){
 		if (result.hasErrors()) return "convenio_edit";
 		repository.save(convenio);
+		attributes.addFlashAttribute("message", "convênio editado com sucesso");
 		return "redirect:/convenio";
 	}
 

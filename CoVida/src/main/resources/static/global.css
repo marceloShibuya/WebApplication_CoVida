@@ -49,6 +49,10 @@ a:visited{
 	color:var(--font-color);
 }
 
+a.btn{
+	background-color: #ffffff;
+}
+
 .yellow, a.yellow { color: #FED851 }
 .red, a.red { color: #BF0059 }
 .blue { color: #13AFE0 }
@@ -165,8 +169,8 @@ textarea{
 	height: 2rem;
 	padding: 1rem;
 	font: var(--primaty-font);
-	color: var(--font-color);
-	background-color: transparent;
+	color: #000000;
+	background-color: #ffffff;
 	border: none;
 	box-shadow: inset -4px -4px 10px rgba(85, 85, 85, 0.25), 
 				inset 4px 4px 10px rgba(0, 0, 0, 0.25);
@@ -206,7 +210,7 @@ textarea{
 
 button.btn{
 	font: var(--font-primary) 1rem;
-	background: transparent;
+	background: #ffffff;
 	border: none;
 	cursor: pointer;
 }
@@ -223,7 +227,8 @@ button.btn{
 	padding: 1rem;
 	box-shadow: -3px -3px 10px rgba(85, 85, 85, 0.25), 
 				3px 3px 10px rgba(0, 0, 0, 0.25);
-	color: #FFFFFF;
+	color: rgb(128, 255, 0);
+	background-color: #ffffff; 
 }
 
 .tasks{

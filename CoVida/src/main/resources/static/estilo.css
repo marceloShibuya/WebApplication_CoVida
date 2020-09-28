@@ -45,6 +45,7 @@
 }
 
 #imgFooter{
+	color: #ffffff;
     margin-top: 10px;
     text-align: center;
     width: 10%;
@@ -106,4 +107,12 @@
     text-align: center;
     box-shadow: black;
     font-style: oblique;
+}
+
+p.card-text{
+	color:#ffffff;
+}
+
+h5.card-title{
+	color: #ffffff;
 }

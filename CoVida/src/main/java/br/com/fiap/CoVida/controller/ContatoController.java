@@ -63,9 +63,10 @@ public class ContatoController {
 	}
 	
 	@PostMapping("update")
-	public String updateContato(@Valid Contato contato, BindingResult result){
+	public String updateContato(@Valid Contato contato, BindingResult result, RedirectAttributes attributes){
 		if (result.hasErrors()) return "contato_edit";
 		repository.save(contato);
+		attributes.addFlashAttribute("message", "contato editado com sucesso");
 		return "redirect:/contato";
 	}
 	

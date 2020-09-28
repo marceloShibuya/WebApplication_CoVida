@@ -62,9 +62,10 @@ public class DoadorController {
 	}
 	
 	@PostMapping("update")
-	public String updateDoador(@Valid Doador doador, BindingResult result){
+	public String updateDoador(@Valid Doador doador, BindingResult result, RedirectAttributes attributes){
 		if (result.hasErrors()) return "doador_edit";
 		repository.save(doador);
+		attributes.addFlashAttribute("message", "doador editado com sucesso");
 		return "redirect:/doador";
 	}
 

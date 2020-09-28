@@ -62,9 +62,10 @@ public class DocumentoController {
 	}
 	
 	@PostMapping("update")
-	public String updateDoador(@Valid Documento documento, BindingResult result){
+	public String updateDoador(@Valid Documento documento, BindingResult result, RedirectAttributes attributes){
 		if (result.hasErrors()) return "documento_edit";
 		repository.save(documento);
+		attributes.addFlashAttribute("message", "documento apagado com sucesso");
 		return "redirect:/documento";
 	}
 
