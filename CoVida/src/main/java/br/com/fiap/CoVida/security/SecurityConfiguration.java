@@ -22,9 +22,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.passwordEncoder(new BCryptPasswordEncoder());
 	}
 	
-	public static void main(String[] args) {
-		System.out.println(new BCryptPasswordEncoder().encode("855533@df##"));
-	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -37,6 +34,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.formLogin()
 				.loginPage("/login")
 		;
+	}
+	
+	// Método apenas para resgatar a senha criptografada do Pedro e que foi salvo no arquivo data.sql
+	public static void main(String[] args) {
+		System.out.println(new BCryptPasswordEncoder().encode("855533@df##"));
 	}
 
 }
