@@ -6,7 +6,7 @@
 
 	<h1>Novo doador</h1>
 
-	<form action="/doador" method="POST" th:object="${doador}">
+	<form th:action="@{/doador}" method="POST" th:object="${doador}">
 
 		<input name="nome" type="text" placeholder="nome completo" value="Marcelo" th:classapend="${#fields.hasErrors('nome')} ? invalid"  /> 
 		<span th:errors="*{nome}"></span>

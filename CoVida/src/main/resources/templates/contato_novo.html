@@ -7,7 +7,7 @@
 
 	<h2>Novo contato</h2>
 
-	<form action="/contato" method="POST" th:object="${contato}">
+	<form th:action="@{/contato}" method="POST" th:object="${contato}">
 
 		<input name="nome" type="text" placeholder="nome completo" value="Ricardo Shibuya" th:classapend="${#fields.hasErrors('nome')} ? invalid"/> 
 		<span th:errors="*{nome}"></span>

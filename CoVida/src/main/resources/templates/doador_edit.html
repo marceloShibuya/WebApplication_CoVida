@@ -8,7 +8,7 @@
 
 	<h2>Editar doador</h2>
 
-	<form action="/doador/update" method="POST" th:object="${doador}">
+	<form th:action="@{/doador/update}" method="POST" th:object="${doador}">
 	
 		<input type="hidden" th:field="*{id}" >
 		

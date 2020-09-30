@@ -8,7 +8,7 @@
 
 	<h2>Editar documento</h2>
 
-	<form action="/documento/update" method="POST" th:object="${documento}">
+	<form th:action="@{/documento/update}" method="POST" th:object="${documento}">
 		
 		<input type="hidden" th:field="*{id}" >
 		

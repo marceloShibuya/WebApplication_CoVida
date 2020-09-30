@@ -5,12 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.fiap.CoVida.model.Doador;
-
 @Controller
 public class IndexController {
-	
-	private Doador doador;
 	
 	@RequestMapping("/index")
 	public String iniciar() {
@@ -23,15 +19,10 @@ public class IndexController {
 	}
 	
 	@PostMapping("/login")
-	public String login(String email, String senha) {
-		
-		if(doador.getEmail() == email && doador.getSenha() == senha) {
-			return "contato";
-		} else {
-			return "login";
-		}
-		
-	}	
+	public String logar() {
+		return "contato";
+	}
+	
 	
 
 }

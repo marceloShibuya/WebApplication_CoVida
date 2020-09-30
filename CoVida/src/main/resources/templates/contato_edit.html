@@ -8,7 +8,7 @@
 
 	<h2>Editar contato</h2>
 
-	<form action="/contato/update" method="POST" th:object="${contato}">
+	<form th:action="@{/contato/update}" method="POST" th:object="${contato}">
 	
 		<input type="hidden" th:field="*{id}" >
 		

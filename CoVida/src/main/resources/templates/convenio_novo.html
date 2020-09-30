@@ -5,7 +5,7 @@
 <div class="content">
 	<h1>Novo convênio</h1>
 
-	<form action="/convenio" method="POST" th:object="${convenio}">
+	<form th:action="@{/convenio}" method="POST" th:object="${convenio}">
 
 		<input name="nome" type="text" placeholder="nome do convênio" value="Sul América" th:classapend="${#fields.hasErrors('nome')} ? invalid" /> 
 		<span th:errors="*{nome}"></span>

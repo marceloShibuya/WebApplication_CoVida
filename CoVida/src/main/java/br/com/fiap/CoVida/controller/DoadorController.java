@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +37,7 @@ public class DoadorController {
 	@PostMapping()
 	public String salvar(@Valid Doador doador, BindingResult result, RedirectAttributes attribute) {
 		if(result.hasErrors()) return "doador_novo";
+		doador.setSenha(new BCryptPasswordEncoder().encode(doador.getPassword()));
 		repository.save(doador);
 		attribute.addFlashAttribute("message", "doador cadastrado com sucesso!");
 		return "redirect:doador";
@@ -68,5 +70,6 @@ public class DoadorController {
 		attributes.addFlashAttribute("message", "doador editado com sucesso");
 		return "redirect:/doador";
 	}
+	
 
 }
