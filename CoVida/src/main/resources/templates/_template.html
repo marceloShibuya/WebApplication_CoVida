@@ -9,10 +9,9 @@
 	<nav th:fragment="menu(page)">
 		<ul>
 			<li>
-				<span th:text="${#authentication.getPrincipal().getNome()}"></span>
+			<span th:text="${#authentication.getPrincipal().getNome()}"></span>
 				<a th:href="@{/logout}"><span class="material-icons" title="sair">exit_to_app</span></a>
 			</li>
-			<li><a href="/doador" th:classappend="${page=='doador'} ? active">Doador</a></li>
 			<li><a href="/contato" th:classappend="${page=='contato'} ? active">Contato</a></li>
 			<li><a href="/convenio" th:classappend="${page=='convenio'} ? active">Convênio</a></li>
 			<li><a href="/documento" th:classappend="${page=='documento'} ? active">Documentos</a></li>

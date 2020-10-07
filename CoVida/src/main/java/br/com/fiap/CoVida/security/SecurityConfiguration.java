@@ -26,7 +26,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/contato/**", "/doador/**", "/convenio/**", "/documento/**")
+			.antMatchers("/contato/**", "/convenio/**", "/documento/**")
 				.authenticated()
 			.antMatchers("/h2.console/**")
 				.permitAll()
@@ -38,7 +38,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.and()
 			.logout()
 				.logoutUrl("/logout")
-				.logoutSuccessUrl("/contato")
+				.logoutSuccessUrl("/login")
 		;
 	}
 	

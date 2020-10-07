@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:include="_template :: head"></head>
 <body>
-	<h1>Doador</h1>
+	<h1>Lista de doadores cadastrados</h1>
 	
-	<nav th:include="_template :: menu('doador')"></nav>
+	<a th:href="@{/logout}"><span class="material-icons" title="sair">exit_to_app</span></a>
 	
 	<a href="/doador/novo" class="btn-sm btn-primary"><span class="material-icons">add</span></a>
 	<a href="/index" class="material-icons white">home</a>
