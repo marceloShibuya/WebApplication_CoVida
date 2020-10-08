@@ -34,13 +34,14 @@ public class DoadorController {
 		return modelAndView;
 	}
 	
+	
 	@PostMapping()
 	public String salvar(@Valid Doador doador, BindingResult result, RedirectAttributes attribute) {
 		if(result.hasErrors()) return "doador_novo";
 		doador.setSenha(new BCryptPasswordEncoder().encode(doador.getPassword()));
 		repository.save(doador);
-		attribute.addFlashAttribute("message", "doador cadastrado com sucesso!");
-		return "redirect:doador";
+		attribute.addFlashAttribute("message", "cadastrado realizado com sucesso!");
+		return "redirect:login";
 	}
 	
 	@RequestMapping("novo")

@@ -4,20 +4,15 @@
 <body>
 	<h1>Lista de doadores cadastrados</h1>
 	
-	<a th:href="@{/logout}"><span class="material-icons" title="sair">exit_to_app</span></a>
-	
-	<a href="/doador/novo" class="btn-sm btn-primary"><span class="material-icons">add</span></a>
 	<a href="/index" class="material-icons white">home</a>
 	
-	<div class="content">
+	<a th:href="@{/logout}"><span class="material-icons" title="sair">exit_to_app</span></a>
 	
-		<span class="alert" th:if="${message != null}" th:text="${message}"></span>
+	<div class="content">
 		
 		<div class="user" th:each="doador : ${doadores}">
 		
-			
-			<img alt="" src="https://avatars.githubusercontent.com/Pedro0176" class="avatar">
-			
+			<img alt="" src="https://avatars.githubusercontent.com/Pedro0176" class="avatar">	
 	
 			<div class="user-info">
 				<h4 th:text="${doador.nome}"></h4>
