@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 @Entity(name = "documentos")
 public class Documento {
 	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
 	@NotBlank(message = "o campo rg é obrigatório")

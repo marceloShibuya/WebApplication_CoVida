@@ -18,7 +18,7 @@ public class Doador implements UserDetails {
 	
 	private static final long serialVersionUID = 1L;
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
 	@NotBlank(message = "o campo nome é obrigatório")

@@ -81,7 +81,6 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-	
 		<dependency>            
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc</artifactId>
@@ -89,7 +88,6 @@
             <scope>system</scope>
             <systemPath>c:/ojdbc8.jar</systemPath>
 		</dependency>
-	
 	</dependencies>
 
 	<build>

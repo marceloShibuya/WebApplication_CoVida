@@ -10,7 +10,7 @@ import javax.validation.constraints.NotBlank;
 @Entity(name = "contatos")
 public class Contato {
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id @GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
 	@NotBlank(message = "o campo nome é obrigatório")
