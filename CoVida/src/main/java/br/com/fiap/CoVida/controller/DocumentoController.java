@@ -65,7 +65,7 @@ public class DocumentoController {
 	public String updateDoador(@Valid Documento documento, BindingResult result, RedirectAttributes attributes){
 		if (result.hasErrors()) return "documento_edit";
 		repository.save(documento);
-		attributes.addFlashAttribute("message", "documento apagado com sucesso");
+		attributes.addFlashAttribute("message", "documento atualizado com sucesso");
 		return "redirect:/documento";
 	}
 

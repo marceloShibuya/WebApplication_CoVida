@@ -66,7 +66,7 @@ public class ContatoController {
 	public String updateContato(@Valid Contato contato, BindingResult result, RedirectAttributes attributes){
 		if (result.hasErrors()) return "contato_edit";
 		repository.save(contato);
-		attributes.addFlashAttribute("message", "contato editado com sucesso");
+		attributes.addFlashAttribute("message", "contato atualizado com sucesso");
 		return "redirect:/contato";
 	}
 	

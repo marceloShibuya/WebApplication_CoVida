@@ -68,7 +68,7 @@ public class DoadorController {
 	public String updateDoador(@Valid Doador doador, BindingResult result, RedirectAttributes attributes){
 		if (result.hasErrors()) return "doador_edit";
 		repository.save(doador);
-		attributes.addFlashAttribute("message", "doador editado com sucesso");
+		attributes.addFlashAttribute("message", "doador atualizado com sucesso");
 		return "redirect:/doador";
 	}
 	

@@ -13,11 +13,7 @@
 	
 		<span class="alert" th:if="${message != null}" th:text="${message}"></span>
 		
-		<div class="user" th:each="contato : ${contatos}">
-		
-			
-			<img alt="" src="https://avatars.githubusercontent.com/marceloShibuya" class="avatar">
-			
+		<div class="user" th:each="contato : ${contatos}">	
 	
 			<div class="user-info">
 				<h4 th:text="${contato.nome}"></h4>
