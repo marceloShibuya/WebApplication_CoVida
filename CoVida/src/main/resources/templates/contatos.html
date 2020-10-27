@@ -13,7 +13,13 @@
 	
 		<span class="alert" th:if="${message != null}" th:text="${message}"></span>
 		
-		<div class="user" th:each="contato : ${contatos}">	
+		<div class="user" th:each="contato : ${contatos}">
+		
+			
+			<!-- Não será utilizado
+			<img alt="" src="https://avatars.githubusercontent.com/marceloShibuya" class="avatar"> 
+			-->
+			
 	
 			<div class="user-info">
 				<h4 th:text="${contato.nome}"></h4>
@@ -22,6 +28,7 @@
 			</div>
 			
 			<div class="user-action">
+				
 				<a th:href="${'contato/' + contato.id}">
 					<span class="material-icons yellow">create</span>
 				</a>
@@ -29,6 +36,8 @@
 					<span class="material-icons red">delete</span>
 				</a>
 			</div>
+			<!-- ok  -->
+			<!-- <a th:href="{'?size=5page' + (contatos.number-1)}"></a> -->
 		</div>
 	</div>
 	
