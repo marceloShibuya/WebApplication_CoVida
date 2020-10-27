@@ -56,6 +56,7 @@ public class Contato {
 	public void setDoador(Doador doador) {
 		this.doador = doador;
 	}
+	
 	@Override
 	public String toString() {
 		return "Contato [nome=" + nome + ", telefone=" + telefone + ", email=" + email + "]";

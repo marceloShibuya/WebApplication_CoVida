@@ -46,6 +46,7 @@ public class Documento {
 	public void setDoador(Doador doador) {
 		this.doador = doador;
 	}
+	
 	@Override
 	public String toString() {
 		return "Documento [id=" + id + ", rg=" + rg + ", cpf=" + cpf + "]";
