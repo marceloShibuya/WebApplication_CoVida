@@ -1,11 +1,16 @@
 package br.com.fiap.CoVida.model;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -30,6 +35,15 @@ public class Doador implements UserDetails {
 	
 	@Size(min = 8)
 	private String senha;
+	
+	@OneToMany(mappedBy = "doador", cascade = CascadeType.ALL)
+	private List<Contato> contatos = new ArrayList<Contato>();
+	
+	@OneToMany(mappedBy = "doador", cascade = CascadeType.ALL)
+	private List<Documento> documentos = new ArrayList<Documento>();
+	
+	@OneToOne(mappedBy = "doador",cascade = CascadeType.ALL)
+	private Convenio convenio;
 
 	public Long getId() {
 		return id;
@@ -55,7 +69,19 @@ public class Doador implements UserDetails {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	public List<Contato> getContatos() {
+		return contatos;
+	}
+	public void setContatos(List<Contato> contatos) {
+		this.contatos = contatos;
+	}
 	
+	public List<Documento> getDocumentos() {
+		return documentos;
+	}
+	public void setDocumentos(List<Documento> documentos) {
+		this.documentos = documentos;
+	}
 	@Override
 	public String toString() {
 		return "Doador [nome=" + nome + ", email=" + email + "]";

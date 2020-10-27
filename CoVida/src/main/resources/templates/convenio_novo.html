@@ -6,6 +6,8 @@
 	<h1>Novo convênio</h1>
 
 	<form th:action="@{/convenio}" method="POST" th:object="${convenio}">
+	
+		<input type="hidden" name="doador.id" th:value="${#authentication.getPrincipal().getId()}" >
 
 		<input name="nome" type="text" placeholder="nome do convênio" value="Sul América" th:classapend="${#fields.hasErrors('nome')} ? invalid" /> 
 		<span th:errors="*{nome}"></span>

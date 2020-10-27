@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 
 @Entity(name = "documentos")
@@ -17,6 +18,9 @@ public class Documento {
 	
 	@NotBlank(message = "o campo cpf é obrigatório")
 	private String cpf;
+	
+	@ManyToOne
+	private Doador doador;
 	
 	public Long getId() {
 		return id;
@@ -35,6 +39,12 @@ public class Documento {
 	}
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+	public Doador getDoador() {
+		return doador;
+	}
+	public void setDoador(Doador doador) {
+		this.doador = doador;
 	}
 	@Override
 	public String toString() {

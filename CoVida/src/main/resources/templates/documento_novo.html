@@ -6,6 +6,8 @@
 	<h1>Novo documento</h1>
 
 	<form th:action="@{/documento}" method="POST" th:object="${documento}">
+		
+		<input type="hidden" name="doador.id" th:value="${#authentication.getPrincipal().getId()}" >
 
 		<input name="rg" type="text" placeholder="digite o rg" value="12369444X" th:classapend="${#fields.hasErrors('rg')} ? invalid" /> 
 		<span th:errors="*{rg}"></span>

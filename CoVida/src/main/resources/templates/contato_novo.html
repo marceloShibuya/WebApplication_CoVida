@@ -8,6 +8,8 @@
 	<h2>Novo contato</h2>
 
 	<form th:action="@{/contato}" method="POST" th:object="${contato}">
+	
+		<input type="hidden" name="doador.id" th:value="${#authentication.getPrincipal().getId()}" >
 
 		<input name="nome" type="text" placeholder="nome completo" value="Ricardo Shibuya" th:classapend="${#fields.hasErrors('nome')} ? invalid"/> 
 		<span th:errors="*{nome}"></span>

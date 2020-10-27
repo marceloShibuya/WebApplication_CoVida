@@ -14,10 +14,6 @@
 		<span class="alert" th:if="${message != null}" th:text="${message}"></span>
 		
 		<div class="user" th:each="convenio : ${convenios}">
-		
-			<!-- 
-			<img alt="" src="" class="avatar">
-			 -->
 	
 			<div class="user-info">
 				<h4 th:text="${convenio.nome}"></h4>
