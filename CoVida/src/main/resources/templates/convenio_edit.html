@@ -6,13 +6,13 @@
 <body>
 <div class="content">
 
-	<h2>Editar convênio</h2>
+	<h2>Editar convÃªnio</h2>
 
 	<form th:action="@{/convenio/update}" method="POST" th:object="${convenio}">
 		<input type="hidden" th:field="*{id}" >
 		<input 
 			type="text" 
-			placeholder="nome do convênio" 
+			placeholder="nome do convÃªnio" 
 			th:field="*{nome}"
 			th:classappend="${#fields.hasErrors('nome')} ? invalid" 
 		/>

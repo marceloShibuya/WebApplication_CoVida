@@ -81,8 +81,13 @@ public class Doador implements UserDetails {
 	}
 	public void setDocumentos(List<Documento> documentos) {
 		this.documentos = documentos;
+	}	
+	public Convenio getConvenio() {
+		return convenio;
 	}
-	
+	public void setConvenio(Convenio convenio) {
+		this.convenio = convenio;
+	}
 	@Override
 	public String toString() {
 		return "Doador [nome=" + nome + ", email=" + email + "]";
