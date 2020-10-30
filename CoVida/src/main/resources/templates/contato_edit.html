@@ -11,6 +11,7 @@
 	<form th:action="@{/contato/update}" method="POST" th:object="${contato}">
 	
 		<input type="hidden" th:field="*{id}" >
+		<input type="hidden" th:field="*{doador}" >
 		
 		<input 
 			type="text" 

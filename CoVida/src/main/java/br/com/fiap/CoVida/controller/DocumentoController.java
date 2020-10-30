@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import br.com.fiap.CoVida.model.Doador;
 import br.com.fiap.CoVida.model.Documento;
 import br.com.fiap.CoVida.repository.DocumentoRepository;
 
@@ -26,11 +28,11 @@ public class DocumentoController {
 	private DocumentoRepository repository;
 	
 	@GetMapping()
-	public ModelAndView documentos() {
-		List<Documento> documentos = repository.findAll();
-		ModelAndView modelAndView = new ModelAndView("documentos");
-		modelAndView.addObject("documentos", documentos);
-		return modelAndView;
+	public ModelAndView documentos(Authentication doador) {
+	List<Documento> documentos = repository.findByDoador((Doador) doador.getPrincipal());
+	ModelAndView modelAndView = new ModelAndView("documentos");
+	modelAndView.addObject("documentos", documentos);
+	return modelAndView;
 	}
 	
 	@PostMapping()

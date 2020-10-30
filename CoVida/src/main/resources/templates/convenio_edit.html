@@ -9,7 +9,10 @@
 	<h2>Editar convênio</h2>
 
 	<form th:action="@{/convenio/update}" method="POST" th:object="${convenio}">
+	
 		<input type="hidden" th:field="*{id}" >
+		<input type="hidden" th:field="*{doador}" >
+		
 		<input 
 			type="text" 
 			placeholder="nome do convênio" 

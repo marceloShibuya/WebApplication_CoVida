@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.fiap.CoVida.model.Convenio;
+import br.com.fiap.CoVida.model.Doador;
 import br.com.fiap.CoVida.repository.ConvenioRepository;
 
 @Controller
@@ -26,11 +28,11 @@ public class ConvenioController {
 	private ConvenioRepository repository;
 	
 	@GetMapping()
-	public ModelAndView convenios() {
-		List<Convenio> convenios = repository.findAll();
-		ModelAndView modelAndView = new ModelAndView("convenios");
-		modelAndView.addObject("convenios", convenios);
-		return modelAndView;
+	public ModelAndView convenios(Authentication doador) {
+	List<Convenio> convenios = repository.findByDoador((Doador) doador.getPrincipal());
+	ModelAndView modelAndView = new ModelAndView("convenios");
+	modelAndView.addObject("convenios", convenios);
+	return modelAndView;
 	}
 	
 	@PostMapping()

@@ -1,13 +1,12 @@
 package br.com.fiap.CoVida.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.fiap.CoVida.model.Contato;
+import br.com.fiap.CoVida.model.Doador;
 import br.com.fiap.CoVida.repository.ContatoRepository;
 
 @Controller
@@ -27,13 +27,12 @@ public class ContatoController {
 	@Autowired
 	private ContatoRepository repository;
 
-	@GetMapping()
-	public ModelAndView contatos(@PageableDefault(page =0, size=5)Pageable pageable) {
-	
-		Page<Contato> contatos = repository.findAll(pageable);
-		ModelAndView modelAndView = new ModelAndView("contatos");
-		modelAndView.addObject("contatos", contatos);
-		return modelAndView;
+	@GetMapping
+	public ModelAndView contatos(Authentication doador) {
+	List<Contato> contatos = repository.findByDoador((Doador) doador.getPrincipal());
+	ModelAndView modelAndView = new ModelAndView("contatos");
+	modelAndView.addObject("contatos", contatos);
+	return modelAndView;
 	}
 	
 	

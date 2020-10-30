@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -42,8 +41,8 @@ public class Doador implements UserDetails {
 	@OneToMany(mappedBy = "doador", cascade = CascadeType.ALL)
 	private List<Documento> documentos = new ArrayList<Documento>();
 	
-	@OneToOne(mappedBy = "doador",cascade = CascadeType.ALL)
-	private Convenio convenio;
+	@OneToMany(mappedBy = "doador",cascade = CascadeType.ALL)
+	private List<Convenio> convenio = new ArrayList<>();
 
 	public Long getId() {
 		return id;
@@ -82,10 +81,11 @@ public class Doador implements UserDetails {
 	public void setDocumentos(List<Documento> documentos) {
 		this.documentos = documentos;
 	}	
-	public Convenio getConvenio() {
+	
+	public List<Convenio> getConvenio() {
 		return convenio;
 	}
-	public void setConvenio(Convenio convenio) {
+	public void setConvenio(List<Convenio> convenio) {
 		this.convenio = convenio;
 	}
 	@Override
